@@ -7,6 +7,10 @@
   align-items: center;
   padding: rem(20px) rem(40px);
 
+  @include down($breakpoint-mobile) {
+    padding: rem(20px) rem(16px);
+  }
+
   .list {
     display: flex;
     gap: clamp(rem(10px), 2vw, rem(40px));
@@ -47,6 +51,10 @@
         left: 0;
         right: 0;
       }
+    }
+
+    @include down($breakpoint-tablet) {
+      display: none;
     }
   }
 

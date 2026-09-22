@@ -2,6 +2,7 @@ import { createThemeSwitcher } from '@/components/theme-switcher/theme-switcher'
 import logoUrl from '@/assets/icons/logo.svg';
 import coffeeCupUrl from '@/assets/icons/coffee-cup.svg';
 import styles from './header.module.scss';
+import { createBurgerButton } from '../burger-menu/burger-menu';
 
 const navigationItems = [
   { label: 'Favorite coffee', href: '#favorite-coffee' },
@@ -63,7 +64,8 @@ export function createHeader() {
   const actions = document.createElement('div');
   actions.className = styles.actions;
 
-  actions.append(themeSwitcher, menuLink);
+  const burger = createBurgerButton();
+  actions.append(themeSwitcher, menuLink, burger);
 
   header.append(logo, nav, actions);
   return header;

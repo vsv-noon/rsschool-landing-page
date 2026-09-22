@@ -1,0 +1,39 @@
+@use '/src/styles/media' as media;
+@use '/src/styles/variables' as breakpoints;
+
+.burgerButton {
+  display: none;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: rem(8px);
+  height: rem(44px);
+  width: rem(44px);
+  background: transparent;
+  border-radius: 50%;
+  border: 1px solid var(--border-inverse);
+  cursor: pointer;
+
+  @include media.down(breakpoints.$breakpoint-tablet) {
+    display: flex;
+  }
+
+  .line {
+    display: block;
+    width: 40%;
+    height: rem(2px);
+    background: var(--border-inverse);
+    transition: transform 0.3s ease;
+  }
+}
+
+.isOpen {
+  .line:nth-child(1) {
+    transform: translateY(rem(5px)) rotate(45deg);
+  }
+
+  .line:nth-child(2) {
+    transform: translateY(rem(-5px)) rotate(-45deg);
+  }
+}
