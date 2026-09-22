@@ -1,0 +1,59 @@
+@use '/src/styles/media' as *;
+
+.themeSwitcher {
+  display: flex;
+  justify-content: space-between;
+  width: rem(88px);
+  height: rem(44px);
+  padding: rem(3px);
+  border: rem(1px) solid var(--border-primary);
+  border-radius: rem(100px);
+}
+
+.sunContainer,
+.moonContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: rem(36px);
+  height: rem(36px);
+  border: rem(1px) solid (--text-accent);
+  border-radius: 50%;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.sunContainer {
+  background: var(--text-accent);
+}
+
+.moonContainer {
+  @include hover {
+    background: var(--dark-border-primary);
+
+    .moon {
+      color: var(--text-inverse);
+      transition: color 0.3s ease;
+    }
+  }
+}
+
+.sun {
+  width: rem(22px);
+  height: rem(22px);
+  color: var(--text-inverse);
+
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: var(--text-inverse);
+  }
+}
+
+.moon {
+  width: rem(18px);
+  height: rem(18px);
+  color: var(--text-primary);
+
+  transition: color 0.3s ease;
+}
