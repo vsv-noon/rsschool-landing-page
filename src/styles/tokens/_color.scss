@@ -20,4 +20,32 @@
   --border-inverse: #665f55;
   --dark-border-primary: #665f55;
   --dark-border-inverse: #c1b6ad;
+
+  //Theme Switcher
+  --bg-sun-btn: #b0907a;
+  --bg-moon-btn: #e1d4c9;
+  --hover-bg-sun-btn: #b0907a;
+  --hover-bg-moon-btn: #665f55;
+}
+
+[data-theme='dark'] {
+  //Text
+  --text-primary: #e1d4c9;
+  --text-inverse: #e1d4c9;
+  --text-accent: #b0907a;
+
+  //Background
+  --bg-page: #292826;
+  --bg-container: #403f3d;
+  --bg-overlay: #292826;
+
+  //Border
+  --border-primary: #665f55;
+  --border-inverse: #c1b6ad;
+
+  //Theme Switcher
+  --bg-sun-btn: #292826;
+  --bg-moon-btn: #b0907a;
+  --hover-bg-sun-btn: #665f55;
+  --hover-bg-moon-btn: #b0907a;
 }

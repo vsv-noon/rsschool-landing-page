@@ -1,8 +1,9 @@
 import { createThemeSwitcher } from '@/components/theme-switcher/theme-switcher';
-import logoUrl from '@/assets/icons/logo.svg';
-import coffeeCupUrl from '@/assets/icons/coffee-cup.svg';
-import styles from './header.module.scss';
+
 import { createBurgerButton } from '../burger-menu/burger-menu';
+import { createCoffeeCupIcon } from '@/icons/coffee-cup';
+import { createLogoIcon } from '@/icons/logo';
+import styles from './header.module.scss';
 
 const navigationItems = [
   { label: 'Favorite coffee', href: '#favorite-coffee' },
@@ -19,9 +20,7 @@ export function createHeader() {
   logo.className = styles.logo;
   logo.href = '/';
 
-  const logoImg = document.createElement('img');
-  logoImg.src = logoUrl;
-  logoImg.alt = 'logo';
+  const logoImg = createLogoIcon();
 
   logo.append(logoImg);
 
@@ -47,6 +46,7 @@ export function createHeader() {
   nav.append(list);
 
   const themeSwitcher = createThemeSwitcher();
+  const coffeeCupIcon = createCoffeeCupIcon();
 
   const menuLink = document.createElement('a');
   menuLink.className = styles.menuLink;
@@ -56,10 +56,8 @@ export function createHeader() {
   menuText.textContent = 'Menu';
   const menuImage = document.createElement('img');
   menuImage.className = styles.menuImage;
-  menuImage.src = coffeeCupUrl;
-  menuImage.alt = 'coffee-cup';
 
-  menuLink.append(menuText, menuImage);
+  menuLink.append(menuText, coffeeCupIcon);
 
   const actions = document.createElement('div');
   actions.className = styles.actions;

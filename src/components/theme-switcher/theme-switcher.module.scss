@@ -10,26 +10,32 @@
   border-radius: rem(100px);
 }
 
-.sunContainer,
-.moonContainer {
+.sunButton,
+.moonButton {
   display: flex;
   justify-content: center;
   align-items: center;
   width: rem(36px);
   height: rem(36px);
-  border: rem(1px) solid (--text-accent);
+  border: none;
   border-radius: 50%;
   transition: 0.3s ease;
   cursor: pointer;
 }
 
-.sunContainer {
-  background: var(--text-accent);
+.sunButton {
+  background-color: var(--bg-sun-btn);
+
+  @include hover {
+    background-color: var(--hover-bg-sun-btn);
+  }
 }
 
-.moonContainer {
+.moonButton {
+  background-color: var(--bg-moon-btn);
+
   @include hover {
-    background: var(--dark-border-primary);
+    background-color: var(--hover-bg-moon-btn);
 
     .moon {
       color: var(--text-inverse);
@@ -56,4 +62,9 @@
   color: var(--text-primary);
 
   transition: color 0.3s ease;
+}
+
+.disableClicks {
+  pointer-events: none;
+  cursor: default;
 }
