@@ -1,5 +1,4 @@
 import { createThemeSwitcher } from '@/components/theme-switcher/theme-switcher';
-
 import { createBurgerButton } from '../burger-menu/burger-menu';
 import { createCoffeeCupIcon } from '@/icons/coffee-cup';
 import { createLogoIcon } from '@/icons/logo';
@@ -51,11 +50,10 @@ export function createHeader() {
   const menuLink = document.createElement('a');
   menuLink.className = styles.menuLink;
   menuLink.href = '/menu';
+
   const menuText = document.createElement('span');
   menuText.className = styles.menuText;
   menuText.textContent = 'Menu';
-  const menuImage = document.createElement('img');
-  menuImage.className = styles.menuImage;
 
   menuLink.append(menuText, coffeeCupIcon);
 
