@@ -2,6 +2,11 @@
 @use '/src/styles/variables' as *;
 
 .header {
+  margin: 0 auto;
+  max-width: $breakpoint-desktop;
+  color: var(--text-primary);
+  background-color: var(--bg-page);
+  font-family: var(--font-inter);
   display: flex;
   justify-content: space-between;
   align-items: center;

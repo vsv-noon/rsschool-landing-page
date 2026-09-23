@@ -1,6 +1,6 @@
 import { createHeader } from '@/components/header/header';
+import { router, setupRouter } from './router';
 import { getTheme, setTheme } from '@/components/theme-switcher/theme-switcher';
-import { createHomePage } from '@/features/home-page/home-page';
 import '@/styles/index.scss';
 
 const app = document.querySelector('#app');
@@ -14,6 +14,7 @@ setTheme(currentTheme);
 
 const header = createHeader();
 
-const homePage = createHomePage();
+app.before(header);
 
-app.append(header, homePage);
+setupRouter();
+router();
