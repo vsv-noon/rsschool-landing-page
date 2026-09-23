@@ -1,0 +1,36 @@
+@use '/src/styles/media' as *;
+@use '/src/styles/variables' as *;
+
+.menuLink {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: rem(8px);
+  text-decoration: none;
+  font-size: var(--link-and-button);
+  color: var(--text-dark);
+  font-weight: var(--weight-semibold);
+
+  .coffeeCupIcon {
+    display: inline-flex;
+    width: 0;
+    margin-left: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+
+    @include down($breakpoint-tablet) {
+      width: rem(20px);
+      opacity: 1;
+    }
+  }
+
+  @include hover() {
+    .coffeeCupIcon {
+      width: rem(20px);
+      margin-left: rem(8px);
+      opacity: 1;
+    }
+  }
+}

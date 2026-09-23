@@ -1,0 +1,19 @@
+@use './reset';
+@use './functions';
+@use './media';
+@use './variables';
+@use './tokens/color';
+@use './tokens/font';
+
+#app {
+  height: 100vh;
+  margin: 0 auto;
+  max-width: $breakpoint-desktop;
+  color: var(--text-primary);
+  background-color: var(--bg-page);
+  font-family: var(--font-inter);
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}

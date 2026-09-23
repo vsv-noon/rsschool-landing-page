@@ -1,0 +1,78 @@
+@use '/src/styles/media' as *;
+@use '/src/styles/variables' as *;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: rem(20px) rem(40px);
+
+  @include down($breakpoint-mobile) {
+    padding: rem(20px) rem(16px);
+  }
+
+  .list {
+    display: flex;
+    gap: clamp(rem(10px), 2vw, rem(40px));
+
+    .link {
+      position: relative;
+      text-decoration: none;
+      font-size: var(--link-and-button);
+      color: var(--text-dark);
+      font-weight: var(--weight-semibold);
+
+      @include hover {
+        &::after {
+          left: 0;
+          right: 0;
+        }
+      }
+
+      @include down($breakpoint-tablet) {
+        display: none;
+      }
+    }
+  }
+
+  .menuLink {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: rem(8px);
+    text-decoration: none;
+    font-size: var(--link-and-button);
+    color: var(--text-dark);
+    font-weight: var(--weight-semibold);
+
+    @include hover {
+      &::after {
+        left: 0;
+        right: 0;
+      }
+    }
+
+    @include down($breakpoint-tablet) {
+      display: none;
+    }
+  }
+
+  .actions {
+    display: flex;
+    align-items: center;
+    gap: rem(24px);
+  }
+}
+
+.link::after,
+.menuLink::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  bottom: rem(-5px);
+  height: rem(2px);
+  background: var(--text-primary);
+  transition: 0.3s ease-in-out;
+}
