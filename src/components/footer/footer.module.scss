@@ -1,0 +1,157 @@
+@use '/src/styles/media' as *;
+@use '/src/styles/variables' as *;
+
+.footer {
+  margin: 0 auto;
+  max-width: $breakpoint-desktop;
+  color: var(--text-primary);
+  background-color: var(--bg-page);
+  font-family: var(--font-inter);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .leftColumn {
+    width: 50%;
+    padding: rem(100px) 0 rem(100px) rem(100px);
+
+    @include down($breakpoint-upper-tablet) {
+      padding: rem(100px) 0 rem(60px) rem(60px);
+    }
+
+    @include down($breakpoint-tablet) {
+      width: 100%;
+      padding: rem(100px) rem(60px);
+    }
+
+    @include down($breakpoint-upper-mobile) {
+      padding: rem(60px) rem(16px) rem(40px) rem(16px);
+    }
+  }
+
+  .rightColumn {
+    width: 50%;
+    padding: rem(100px) 0 rem(100px) rem(16px);
+
+    @include down($breakpoint-tablet) {
+      width: 100%;
+      padding: 0 0 rem(100px) rem(16px);
+    }
+
+    @include down($breakpoint-upper-mobile) {
+      padding: 0 0 rem(40px) rem(16px);
+    }
+  }
+
+  .footerContainer {
+    width: 100%;
+    display: flex;
+    background-color: var(--bg-container);
+    border-radius: rem(40px);
+
+    @include down($breakpoint-tablet) {
+      flex-direction: column;
+    }
+  }
+
+  .h2 {
+    color: var(--text-inverse);
+    font-feature-settings:
+      'clig' off,
+      'liga' off;
+    font-size: var(--heading-2);
+    font-weight: var(--weight-semibold);
+    line-height: 125%;
+    margin-bottom: rem(40px);
+
+    @include down($breakpoint-upper-mobile) {
+      font-size: var(--heading-2-mobile);
+    }
+
+    .span {
+      color: var(--text-accent);
+      font-style: italic;
+    }
+
+    @include down($breakpoint-upper-mobile) {
+      font-size: var(--heading-2-mobile);
+    }
+  }
+
+  .socialList {
+    display: flex;
+    gap: rem(5px);
+
+    li {
+      display: flex;
+      border: 1px solid var(--border-primary);
+      border-radius: 50%;
+      cursor: pointer;
+      transition: 0.3s ease-in-out;
+
+      .socialLink {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: rem(60px);
+        height: rem(60px);
+      }
+
+      @include hover() {
+        background-color: var(--border-primary);
+
+        svg {
+          color: var(--text-primary);
+        }
+      }
+    }
+  }
+
+  .h3 {
+    font-size: var(--heading-3);
+    font-weight: var(--weight-semibold);
+    color: var(--text-inverse);
+    line-height: 125%;
+    margin-bottom: rem(40px);
+  }
+
+  .contacts {
+    display: flex;
+    flex-direction: column;
+    gap: rem(20px);
+
+    li {
+      display: flex;
+    }
+  }
+
+  .contactsLink {
+    position: relative;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: rem(8px);
+    text-decoration: none;
+    font-size: var(--link-and-button);
+    color: var(--text-inverse);
+    font-weight: var(--weight-semibold);
+
+    @include hover {
+      &::after {
+        left: 0;
+        right: 0;
+      }
+    }
+  }
+
+  .contactsLink::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    bottom: rem(-2px);
+    height: rem(2px);
+    background: var(--text-inverse);
+    transition: 0.3s ease-in-out;
+  }
+}

@@ -37,6 +37,8 @@ export function setupRouter() {
       return;
     }
 
+    console.log(target)
+
     event.preventDefault();
 
     const url = target.getAttribute('href');

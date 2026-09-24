@@ -1,3 +1,6 @@
+@use '/src/styles/media' as *;
+@use '/src/styles/variables' as *;
+
 .coffeeCup {
   width: rem(20px);
   height: rem(20px);
@@ -8,4 +11,28 @@
   height: rem(60px);
 
   color: var(--text-primary);
+}
+
+.twitter {
+  width: rem(60px);
+  height: rem(60px);
+
+  color: var(--border-primary);
+  transition: 0.3s ease-in-out;
+}
+
+.envelope {
+  width: rem(25px);
+  height: rem(25px);
+
+  color: var(--border-primary);
+  transition: 0.3s ease-in-out;
+}
+
+.skype {
+  width: rem(30px);
+  height: rem(30px);
+
+  color: var(--border-primary);
+  transition: 0.3s ease-in-out;
 }

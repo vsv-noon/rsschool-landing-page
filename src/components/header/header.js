@@ -5,9 +5,9 @@ import { createLogoIcon } from '@/icons/logo';
 import styles from './header.module.scss';
 
 const navigationItems = [
-  { label: 'Favorite coffee', href: '#favorite-coffee' },
-  { label: 'About', href: '#about' },
-  { label: 'Mobile app', href: '#mobile-app' },
+  { label: 'Favorite coffee', href: '/#favorite-coffee' },
+  { label: 'About', href: '/#about' },
+  { label: 'Mobile app', href: '/#mobile-app' },
   { label: 'Contact us', href: '#contact-us' },
 ];
 
